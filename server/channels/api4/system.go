@@ -101,10 +101,6 @@ func generateSupportPacket(c *Context, w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Checking to see if the server has a e10 or e20 license (this feature is only permitted for servers with licenses)
-	if c.App.Channels().License() == nil {
-		c.Err = model.NewAppError("Api4.generateSupportPacket", "api.no_license", nil, "", http.StatusForbidden)
-		return
-	}
 
 	fileDatas := c.App.GenerateSupportPacket(c.AppContext, supportPacketOptions)
 
