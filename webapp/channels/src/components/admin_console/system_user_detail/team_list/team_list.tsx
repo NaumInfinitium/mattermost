@@ -46,6 +46,10 @@ const headerLabels = [
         },
     },
     {
+        label: defineMessage({
+            id: 'admin.systemUserDetail.teamList.header.role',
+            defaultMessage: 'Role',
+        }),
         style: {
             width: '150px',
         },
@@ -90,6 +94,7 @@ export default class TeamList extends React.PureComponent<Props, State> {
     }
 
     public componentDidMount() {
+        console.log("mount")
         this.getTeamsAndMemberships();
     }
 
